@@ -29,8 +29,14 @@ void draw(){
   rect(350,410, 90,90);
   fill(50, 0, 255);
   rect(170, 300, 460,60);
+  textSize(35);
+  fill(1);
+  text("SOUTH PARK ELEMENTARY", 170, 338);
+
   //janela
   fill(#45897A);
+  strokeWeight(2);
+  stroke(255,100,0);
   rect(120, 410, 65, 60);
   rect(235, 410, 65, 60);
   rect(490, 410, 65,60);
@@ -40,6 +46,8 @@ void draw(){
   rect(490, 180, 65,60);
   rect(605, 180, 65, 60);
   rect(360, 180, 65, 60);
+  noStroke();
+  fill(255, 200, 0);
   rect(120, 440, 65,2);
   rect(152.5, 410, 2, 60);
   rect(235, 440, 65,2);
