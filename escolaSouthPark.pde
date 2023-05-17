@@ -5,6 +5,7 @@ void setup(){
 
 void draw(){
   //fundo
+  strokeWeight(1);
   noStroke();
   background(#8AE1EB);
   fill(#FDC00E);
@@ -24,19 +25,64 @@ void draw(){
   line(64, 75, 737, 75);
   line(69, 57, 729, 57);
   
-  
   fill(#5A241A);
   rect(350,410, 90,90);
+  rect(395, 455, 5, 15);
+  rect(390, 455, 5, 15);
+
   fill(50, 0, 255);
   rect(170, 300, 460,60);
   textSize(35);
   fill(1);
-  text("SOUTH PARK ELEMENTARY", 170, 338);
+  text("SOUTH PARK ELEMENTARY", 175, 338);
+  //rua 
+  beginShape();
+  fill(#C0C0C0);
+  vertex(0, 600);
+  vertex(300, 600);
+  vertex(350, 500);
+  vertex(440, 500);
+  vertex(490, 600);
+  vertex(800, 600);
+  vertex(800,800);
+  vertex(0,800);
+  vertex(0,600);
+  endShape();
+  //rect(350,410, 90,90);
+  //grama
+  beginShape();
+  fill(0, 200,0);
+  vertex(0,500);
+  vertex(350,500);
+  vertex(300,600);
+  vertex(0,600);
+  vertex(0,500);
+  endShape();
+   beginShape();
+  fill(0, 200,0);
+  vertex(800,500);
+  vertex(440,500);
+  vertex(490,600);
+  vertex(800,600);
+  vertex(800,500);
+  endShape();
+  
 
+  
   //janela
+  fill(255,150,0);
+  //noStroke();
+  //stroke(255,100,0);
+  rect(117.5, 407.5, 70.5, 65.5);
+  rect(233.5, 407.5, 70.5, 65.5);
+  rect(487.5, 407.5, 70.5,65.5);
+  rect(602.5, 407.5, 70.5, 65.5);
+  rect(117.5, 177.5 ,70.5,65.5);
+  rect(232.5, 177.5, 70.5,65.5);
+  rect(487.5, 177.5, 70.5,65.5);
+  rect(602.5, 177.5, 70.5, 65.5);
+  rect(357.5, 177.5, 70.5, 65.5);
   fill(#45897A);
-  strokeWeight(2);
-  stroke(255,100,0);
   rect(120, 410, 65, 60);
   rect(235, 410, 65, 60);
   rect(490, 410, 65,60);
