@@ -64,8 +64,8 @@ int teclaD = 0;
 int teclaZ = 0;
 int teclaX = 0;
 int lixo = 0;
-
-
+float olhoAberto = 300;
+float olhoFechado = 375;
 
 void draw(){
   background(0,0,255);
@@ -158,74 +158,80 @@ camera((width/2)+teclaA+teclaD, (height/2)+teclaS+teclaW, ((width/2) / tan(PI/6)
   desenhaRect(440, 375, 103.5, 45, 75, 20);
   desenhaRect(520, 375, 103.5, 45, 75, 20);
   fill(1);
-  desenhaRect(440, 375, 104, 25, 40, 20);
-  desenhaRect(520, 375, 104, 25, 40, 20);
-  
+  desenhaRect(441, 376, 104, 25, 40, 20);
+  desenhaRect(521, 376, 104, 25, 40, 20);
+  ////cima////
   fill(255, 0,0);
-  /////////cima
-  desenhaRect(440, 275, 103.5, 45, 75, 20);
-  desenhaRect(520, 275, 103.5, 45, 75, 20);
-  ///////////baixo
-  desenhaRect(440, 475, 103.5, 45, 75, 20);
-  desenhaRect(520, 475, 103.5, 45, 75, 20);
 
-    
   
+  ///////////PISCADELA///////////////////////////////
   
-  //////////////////////////////////////////////////
-  
-
-  /////////OLHOS FECHADOS//////////////////////////
-  ///DIREITA///////////////////////////////////
-  /*
-  beginShape();
-  fill(1);
-  curveVertex(573, 441, 103);
-  curveVertex(573, 441, 103);
-  curveVertex(563, 395, 103);
-  curveVertex(516, 395, 103);
-  curveVertex(507, 441, 103);
-  curveVertex(507, 441, 103);
-  endShape();
-  beginShape();
-  fill(1);
-  curveVertex(573, 441, 103);
-  curveVertex(573, 441, 103);
-  curveVertex(563, 487, 103);
-  curveVertex(516, 487, 103);
-  curveVertex(507, 441, 103);
-  curveVertex(507, 441, 103);
-  endShape();
-  ////////Esquerda//////////////////////////
-  beginShape();
-  fill(1);
-  curveVertex(493, 441, 103);
-  curveVertex(493, 441, 103);
-  curveVertex(484, 395, 103);
-  curveVertex(436, 395, 103);
-  curveVertex(427, 441, 103);
-  curveVertex(427, 441, 103);
-  endShape();
-  beginShape();
-  fill(1);
-  curveVertex(493, 441, 103);
-  curveVertex(493, 441, 103);
-  curveVertex(484, 487, 103);
-  curveVertex(436, 487, 103);
-  curveVertex(427, 441, 103);
-  curveVertex(427, 441, 103);
-  endShape();
-  */
-  /////////////////////////////////////////////
+  if((key == 'f') || (key == 'F')){
+    if(olhoAberto <= 372.5){
+      olhoAberto +=2.5;
+      desenhaRect(440, olhoAberto, 104.5, 50, 75, 20);
+      desenhaRect(520, olhoAberto, 104.5, 50, 75, 20);  
+    }
+    else{
+      if(olhoFechado >= 302.5){
+        olhoFechado -=2.5;
+        desenhaRect(440, olhoFechado, 104.5, 50, 75, 20);
+        desenhaRect(520, olhoFechado, 104.5, 50, 75, 20);  
+      }
+      else{
+        olhoAberto = 300;
+        olhoFechado = 375;
+      }
+    }
+  }
+  //////PISCA ESQUERDA/////////////////////////////////
+  if(key == '4'){
+    if(olhoAberto <= 372.5){
+      olhoAberto +=2.5;
+      desenhaRect(440, olhoAberto, 104.5, 50, 75, 20);
+    }
+    else{
+      if(olhoFechado >= 302.5){
+        olhoFechado -=2.5;
+        desenhaRect(440, olhoFechado, 104.5, 50, 75, 20);
+      }
+      else{
+        olhoAberto = 300;
+        olhoFechado = 375;
+      }
+    }
+  }
+  /////PISCADELA DIREITA//////////////////////////////////
+   if(key == '6'){
+    if(olhoAberto <= 372.5){
+      olhoAberto +=2.5;
+      desenhaRect(520, olhoAberto, 104.5, 50, 75, 20);
+    }
+    else{
+      if(olhoFechado >= 302.5){
+        olhoFechado -=2.5;
+        desenhaRect(520, olhoFechado, 104.5, 50, 75, 20);
+      }
+      else{
+        olhoAberto = 300;
+        olhoFechado = 375;
+      }
+    }
+  }
+    //////////////////////////////////////////
   /////BOCA///////////////////////////////////
-  
-  fill(0);
-  desenhaTri(100, 150, 102.5, 340, 400, 460, 400, 400, 465);
-  fill(255);
-  desenhaRet(475, 558, 102, 15,15 ,2);
-  desenhaRet(491, 558, 102, 15,15, 2);
-  desenhaRet(507, 558, 102, 15,15, 2);
-  desenhaRet(523, 558, 102, 15,15, 2);
+  if (contadorTampa == 0){
+    fill(0);
+    desenhaTri(100, 150, 102.5, 340, 400, 460, 400, 400, 465);
+    fill(255);
+    desenhaRet(475, 558, 102, 15,15 ,2);
+    desenhaRet(491, 558, 102, 15,15, 2);
+    desenhaRet(507, 558, 102, 15,15, 2);
+    desenhaRet(523, 558, 102, 15,15, 2);
+  }
+  if(contadorTampa == 20){
+    desenhaRet(100, 100 ,106, 20, 20, 5);
+  }
   //FIM BOCA/////////////////////////////////
   
   
@@ -308,6 +314,7 @@ camera((width/2)+teclaA+teclaD, (height/2)+teclaS+teclaW, ((width/2) / tan(PI/6)
         rotateX(radians(contadorTampa));
         box(255, 10, 210);
         contadorTampa++;
+        
         translate(-500, -270+(contadorTampa*1.5), contadorTampa);
         popMatrix();
         /////////////PEDAL///////////////
